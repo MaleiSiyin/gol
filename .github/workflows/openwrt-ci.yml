@@ -84,6 +84,7 @@ jobs:
         cd bin
         tar czvf x64_packages.tar.gz packages
         tar czvf x64_targets.tar.gz  targets
+        https://sc.ftqq.com/SCU86461T785633bfcdf09fb254b86455c5f771d65e566d3205ba6.send?text=X64即将编译完成
         
     - name: Upload packages directory
       uses: actions/upload-artifact@master
