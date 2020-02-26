@@ -100,7 +100,7 @@ jobs:
     - name: Upload packages Release Asset
       uses: svenstaro/upload-release-action@v1-release
       with:
-        repo_token: ${{ 754ac569e71b72232ef3e1222722510e07d5162e }}
+        repo_token: ${{ secrets.TOKEN }}
         file: openwrt/bin/x64_packages.tar.gz
         tag: ${{ env.DATE }}
         overwrite: true
@@ -109,7 +109,7 @@ jobs:
     - name: Upload targets Release Asset
       uses: svenstaro/upload-release-action@v1-release
       with:
-        repo_token: ${{ 754ac569e71b72232ef3e1222722510e07d5162e }}
+        repo_token: ${{ secrets.TOKEN }}
         file: openwrt/bin/x64_targets.tar.gz
         tag: ${{ env.DATE }}
         overwrite: true
