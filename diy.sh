@@ -1,5 +1,3 @@
-sed -i 's/openwrt.proxy.ustclug.org/op.hyird.xyz/g' package/lean/default-settings/files/zzz-default-settings
-version=$(cat ../version)
 sed -i '33 d' package/lean/default-settings/files/zzz-default-settings
 sed -i '33 d' package/lean/default-settings/files/zzz-default-settings
 sed -i '44 d' package/lean/default-settings/files/zzz-default-settings
@@ -17,9 +15,7 @@ rm -rf package/base-files/files/etc/banner
 cp -f ../banner package/base-files/files/etc/
 
 #add sonme additional packages
-git clone https://github.com/rufengsuixing/luci-app-adguardhome         package/adg
-git clone https://github.com/destan19/OpenAppFilter                     package/oaf
-git clone https://github.com/Advanced-noob/luci-theme-atmaterial.git    package/atmaterial
+git clone https://github.com/rufengsuixing/luci-app-adguardhome         package/lean
 git clone https://github.com/vernesong/OpenClash                        package/clash
 
 cat << EOF >> target/linux/ipq40xx/config-4.14
