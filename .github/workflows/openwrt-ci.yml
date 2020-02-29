@@ -48,9 +48,12 @@ jobs:
     - name: Clone source code
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-    - name: Add Lienol packages
-      run: cd openwrt && echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default && cat feeds.conf.default
-
+    - name: 下载主题和软件包
+      run: |     
+        cd openwrt/package/lean
+        git clone https://github.com/openwrt-develop/luci-theme-atmaterial
+        git clone https://github.com/rosywrt/luci-theme-rosy
+   
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
@@ -97,21 +100,3 @@ jobs:
       with:
         name: OpenWrt_targets
         path: openwrt/bin/targets
-
-    - name: Upload packages Release Asset
-      uses: svenstaro/upload-release-action@v1-release
-      with:
-        repo_token: ${{ secrets.TOKEN }}
-        file: openwrt/bin/x64_packages.tar.gz
-        tag: ${{ env.DATE }}
-        overwrite: true
-        file_glob: true
-        
-    - name: Upload targets Release Asset
-      uses: svenstaro/upload-release-action@v1-release
-      with:
-        repo_token: ${{ secrets.TOKEN }}
-        file: openwrt/bin/x64_targets.tar.gz
-        tag: ${{ env.DATE }}
-        overwrite: true
-        file_glob: true
