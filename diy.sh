@@ -15,7 +15,6 @@ rm -rf package/base-files/files/etc/banner
 cp -f ../banner package/base-files/files/etc/
 
 #add sonme additional packages
-git clone https://github.com/rufengsuixing/luci-app-adguardhome         package/lean
 git clone https://github.com/vernesong/OpenClash                        package/clash
 
 cat << EOF >> target/linux/ipq40xx/config-4.14
