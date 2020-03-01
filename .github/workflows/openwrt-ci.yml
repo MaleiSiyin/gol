@@ -51,8 +51,6 @@ jobs:
     - name: 下载主题和软件包
       run: |     
         cd openwrt/package/lean
-        rm -rf luci-theme-argon
-        git clone https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/rosywrt/luci-theme-rosy
    
     - name: Update feeds
@@ -88,7 +86,7 @@ jobs:
         cd bin
         tar czvf x64_packages.tar.gz packages
         tar czvf x64_targets.tar.gz  targets
-        curl https://sc.ftqq.com/SCU86461T785633bfcdf09fb254b86455c5f771d65e566d3205ba6.send?text=项目即将编译完成
+        curl https://sc.ftqq.com/SCU86461Tc5fafcd48e3aa222aae9e2cc1e65709f5e5b972f2fed1.send?text=项目即将编译完成
         
     - name: Upload packages directory
       uses: actions/upload-artifact@master
