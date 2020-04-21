@@ -14,3 +14,5 @@ mkdir sakura
 git clone https://github.com/destan19/OpenAppFilter && mv -f OpenAppFilter/* ./
 git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/garypang13/luci-app-eqos
+git clone https://github.com/jerrykuku/lua-maxminddb.git
+git clone https://github.com/jerrykuku/luci-app-vssr.git
